@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using OOP_Project_3D.Controllers;
 
 namespace OOP_Project_3D.Movements
 {
@@ -8,14 +9,17 @@ namespace OOP_Project_3D.Movements
     {
         Rigidbody _rigidbody;
 
-        public Mover(Rigidbody rigidbody)
+        PlayerController _playerController;
+
+        public Mover(PlayerController playerController)
         {
-            _rigidbody = rigidbody;
+            _playerController = playerController;
+            _rigidbody = playerController.GetComponent<Rigidbody>();
         }
 
         public void FixedTick()
         {
-            _rigidbody.AddRelativeForce(Vector3.up * Time.deltaTime * 900);
+            _rigidbody.AddRelativeForce(Vector3.up * Time.deltaTime * _playerController.Force);
         }
     }
 }
