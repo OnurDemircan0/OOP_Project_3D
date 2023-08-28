@@ -665,6 +665,10 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4544156857227263584, guid: c3c033ff5764e3149a48dd402a60f8e0, type: 3}
+      propertyPath: _turnSpeed
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 5791859281751051126, guid: c3c033ff5764e3149a48dd402a60f8e0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
