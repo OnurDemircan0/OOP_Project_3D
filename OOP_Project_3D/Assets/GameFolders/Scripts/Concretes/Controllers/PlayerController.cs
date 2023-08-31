@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using OOP_Project_3D.Inputs;
 using OOP_Project_3D.Movements;
+using OOP_Project_3D.Managers;
 
 namespace OOP_Project_3D.Controllers
 {
@@ -16,6 +17,7 @@ namespace OOP_Project_3D.Controllers
         Rotator _rotator;
         Fuel _fuel;
 
+        bool _canMove;
         bool _canForceUp;
         float _leftRight;
 
@@ -30,8 +32,25 @@ namespace OOP_Project_3D.Controllers
             _fuel = GetComponent<Fuel>();
         }
 
+        private void Start()
+        {
+            _canMove = true;
+        }
+
+        private void OnEnable()
+        {
+            GameManager.Instance.OnGameOver += HandleOnEventTriggered;
+        }
+
+        private void OnDisable()
+        {
+            GameManager.Instance.OnGameOver -= HandleOnEventTriggered;
+        }
+
         private void Update()
         {
+            if (!_canMove) return;
+
             if (_input.IsForceUp && !_fuel.IsEmpty)
             {
                 _canForceUp = true;
@@ -54,6 +73,14 @@ namespace OOP_Project_3D.Controllers
             }
 
             _rotator.FixedTick(_leftRight);
+        }
+
+        private void HandleOnEventTriggered()
+        {
+            _canMove = false;
+            _canForceUp = false;
+            _leftRight = 0f;
+            _fuel.FuelIncrease(0f);
         }
 
     }
