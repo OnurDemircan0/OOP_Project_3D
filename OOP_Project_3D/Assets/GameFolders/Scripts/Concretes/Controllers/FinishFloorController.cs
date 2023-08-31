@@ -21,6 +21,7 @@ namespace OOP_Project_3D.Controllers
             {
                 _finishLight.SetActive(true);
                 _finishFireWorks.SetActive(true);
+                GameManager.Instance.MissionSucceed();
             }
             else
             {

@@ -40,11 +40,13 @@ namespace OOP_Project_3D.Controllers
         private void OnEnable()
         {
             GameManager.Instance.OnGameOver += HandleOnEventTriggered;
+            GameManager.Instance.OnMissionSucceed += HandleOnEventTriggered;
         }
 
         private void OnDisable()
         {
             GameManager.Instance.OnGameOver -= HandleOnEventTriggered;
+            GameManager.Instance.OnMissionSucceed -= HandleOnEventTriggered;
         }
 
         private void Update()
