@@ -24,6 +24,8 @@ namespace OOP_Project_3D.Controllers
         public float TurnSpeed => _turnSpeed;
         public float Force => _force;
 
+        public bool CanMove => _canMove;
+
         private void Awake()
         {
             _input = new DefaultInput();

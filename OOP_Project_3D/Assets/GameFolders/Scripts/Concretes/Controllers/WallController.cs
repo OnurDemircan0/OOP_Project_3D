@@ -12,7 +12,7 @@ namespace OOP_Project_3D.Controllers
         {
             PlayerController player = collision.collider.GetComponent<PlayerController>();
 
-            if(player != null)
+            if(player != null && player.CanMove)
             {
                 GameManager.Instance.GameOver();
             }
