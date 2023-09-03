@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using OOP_Project_3D.Managers;
 
 namespace OOP_Project_3D.Movements
 {
@@ -27,6 +28,8 @@ namespace OOP_Project_3D.Movements
             {
                 _particle.SetActive(false);
             }
+
+            SoundManager.Instance.StopSound(0);
         }
 
         public void FuelDecrease(float decrease)
@@ -38,6 +41,8 @@ namespace OOP_Project_3D.Movements
             {
                 _particle.SetActive(true);
             }
+
+            SoundManager.Instance.PlaySound(0);
         }
     }
 }
