@@ -8,10 +8,10 @@ namespace OOP_Project_3D.Controllers
     public class MovingWallController : WallController
     {
         [SerializeField] Vector3 _direction;
-        [Range(0f, 1f)]
-        [SerializeField] float _factor;
+        [SerializeField] float _speed = 1;
 
         Vector3 _startPosition;
+        float _factor;
 
         private void Awake()
         {
@@ -20,6 +20,7 @@ namespace OOP_Project_3D.Controllers
 
         private void Update()
         {
+            _factor = (Mathf.Sin(Time.time / (1 / _speed)) + 1f) / 2f;
             Vector3 offset = _direction * _factor;
             transform.position = offset + _startPosition;
         }
