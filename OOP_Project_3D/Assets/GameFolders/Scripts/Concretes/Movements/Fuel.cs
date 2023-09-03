@@ -11,6 +11,7 @@ namespace OOP_Project_3D.Movements
         [SerializeField] GameObject _particle;
 
         public bool IsEmpty => _currentFuel < 1f;
+        public float CurrrentFuel => _currentFuel / _maxFuel;
 
         private void Awake()
         {

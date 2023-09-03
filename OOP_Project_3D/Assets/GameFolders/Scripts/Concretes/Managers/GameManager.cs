@@ -14,6 +14,7 @@ namespace OOP_Project_3D.Managers
 
         private void Awake()
         {
+            Application.targetFrameRate = 60;
             SingletonThisGameObject();
         }
 

@@ -62,7 +62,7 @@ namespace OOP_Project_3D.Controllers
             else
             {
                 _canForceUp = false;
-                _fuel.FuelIncrease(0.1f);
+                _fuel.FuelIncrease(0.08f);
             }
 
             _leftRight = _input.LeftRight;
