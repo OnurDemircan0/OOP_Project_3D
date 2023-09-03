@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 namespace OOP_Project_3D.Inputs
 {
     public class DefaultInput
